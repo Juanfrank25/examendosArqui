@@ -1,0 +1,17 @@
+#container {
+    width: 300px;
+    margin-right: 40px;
+}
+
+#container img {
+    max-width: 100%;
+}
+#urlImg { 
+    font-family: sans-serif; 
+    font-size: 12px; 
+    font-weight: 300; 
+    color: #ffffff; 
+    background:#777474;
+    width: 600px;
+    height: 25px;
+}
