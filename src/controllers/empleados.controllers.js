@@ -15,8 +15,8 @@ asignationCTRL.valEmpleado = async (req, res) => {
     const respDB = await getDatoBiometricoByValor(currentConnection, base64)
     if (respDB.recordset.length > 0) {
         const datoBiometrico = respDB.recordset[0];
-        const respEm = await getEmpleadoById(currentConnection, datoBiometrico.ID_EMPLEADO)
-        console.log(respDB,respEm,datoBiometrico)
+        const respEm = await getEmpleadoById(currentConnection, datoBiometrico.id_Empleado)
+        console.log(respEm,datoBiometrico)
         if (respEm.recordset.length > 0) {
             if (validarDatos(req.body.day, respEm.recordset[0])) {
                 res.json({ success: true });
@@ -35,7 +35,7 @@ const getEmpleadoById = async (currentConnection, id) => await currentConnection
     .query(`SELECT * FROM Empleado WHERE id_Empleado = @id`);
 
 const validarDatos = (day, empleado) => {
-    const lastDPINumber = parseInt(empleado.DPI.toString().slice(empleado.DPI.length - 1))
+    const lastDPINumber = parseInt(empleado.DPI_Empleado.toString().slice(empleado.DPI_Empleado.length - 1))
     if (lastDPINumber == 1 || lastDPINumber == 4 || lastDPINumber == 7)
         if (day == 'Lunes') return true;
     if (lastDPINumber == 2 || lastDPINumber == 5 || lastDPINumber == 8)
