@@ -16,6 +16,9 @@ app.use(morgan('dev'))
 app.use(express.json())
 app.use(methodOverride('_method'));
 
+// Routes
+app.use('/rest/api/DatoBiometrico', require('./src/routes/empleados.routes'));
+
 // Index Route
 app.get('/', (req, res) => {
     res.send('invaild endpoint');
@@ -28,3 +31,4 @@ app.get('*', (req, res) => {
 app.listen(app.get('port'), () => { 
     console.log(`Express server listening on port ${app.get('port')}`);
 })
+

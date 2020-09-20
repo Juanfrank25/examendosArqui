@@ -1,5 +1,5 @@
 {
-  "name": "examendos",
+  "name": "examendosArqui",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,9 +10,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
+    "image-to-base64": "^2.1.1",
     "method-override": "^3.0.0",
     "morgan": "^1.10.0",
+    "mssql": "^6.2.2",
     "path": "^0.12.7"
   }
 }
