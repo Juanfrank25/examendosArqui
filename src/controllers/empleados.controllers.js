@@ -16,6 +16,7 @@ asignationCTRL.valEmpleado = async (req, res) => {
     if (respDB.recordset.length > 0) {
         const datoBiometrico = respDB.recordset[0];
         const respEm = await getEmpleadoById(currentConnection, datoBiometrico.ID_EMPLEADO)
+        console.log(respDB,respEm,datoBiometrico)
         if (respEm.recordset.length > 0) {
             if (validarDatos(req.body.day, respEm.recordset[0])) {
                 res.json({ success: true });
